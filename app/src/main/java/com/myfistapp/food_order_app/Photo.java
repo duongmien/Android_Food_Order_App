@@ -1,9 +1,9 @@
 package com.myfistapp.food_order_app;
 
-public class photo {
+public class Photo {
     private int resourceId;
 
-    public photo(int resourceId) {
+    public Photo(int resourceId) {
         this.resourceId = resourceId;
     }
 

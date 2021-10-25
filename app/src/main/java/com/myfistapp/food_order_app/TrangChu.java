@@ -1,7 +1,6 @@
 package com.myfistapp.food_order_app;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -30,20 +29,18 @@ public class TrangChu extends AppCompatActivity {
     //Khai báo ImageSlide
     private ViewPager mViewPager;
     private CircleIndicator mCircleIndicator;
-    private List<photo> mListPhoto;
+    private List<Photo> mListPhoto;
 
     //Khai báo GridView
     GridView gridView;
     String[] ten={
-            "Món 1","Món 2","Món 3","Món 4","Món 5","Món 6","Món 7","Món 8","Món 9","Món 10","Món 11","Món 12",
+            "Món 1","Món 2","Món 3","Món 4","Món 5","Món 6","Món 7","Món 8"
     };
     int[] hinh={
-            R.drawable.menu_item1,R.drawable.menu_item2,
-            R.drawable.menu_item3,R.drawable.menu_item4,
-            R.drawable.menu_item5,R.drawable.menu_item1,
-            R.drawable.menu_item1,R.drawable.menu_item2,
-            R.drawable.menu_item3,R.drawable.menu_item4,
-            R.drawable.menu_item5,R.drawable.menu_item1
+            R.drawable.favorite_food_1,R.drawable.favorite_food_2,
+            R.drawable.favorite_food_3,R.drawable.favorite_food_4,
+            R.drawable.favorite_food_5,R.drawable.favorite_food_6,
+            R.drawable.favorite_food_7,R.drawable.favorite_food_8
     };
 
     @Override
@@ -107,11 +104,11 @@ public class TrangChu extends AppCompatActivity {
     }
 
     //Thêm ảnh Slider
-    private List<photo> getmListPhoto(){
-        List<photo> list = new ArrayList<>();
-        list.add(new photo((R.drawable.banner1)));
-        list.add(new photo((R.drawable.banner2)));
-        list.add(new photo((R.drawable.banner1)));
+    private List<Photo> getmListPhoto(){
+        List<Photo> list = new ArrayList<>();
+        list.add(new Photo((R.drawable.banner1)));
+        list.add(new Photo((R.drawable.banner2)));
+        list.add(new Photo((R.drawable.banner1)));
 
         return list;
     }

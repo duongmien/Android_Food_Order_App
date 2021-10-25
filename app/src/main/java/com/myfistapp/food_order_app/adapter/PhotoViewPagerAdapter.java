@@ -9,17 +9,17 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.myfistapp.food_order_app.R;
-import com.myfistapp.food_order_app.photo;
+import com.myfistapp.food_order_app.Photo;
 
 import java.util.List;
 
 public class PhotoViewPagerAdapter extends PagerAdapter {
 
-    public PhotoViewPagerAdapter(List<photo> mListPhoto) {
+    public PhotoViewPagerAdapter(List<Photo> mListPhoto) {
         this.mListPhoto = mListPhoto;
     }
 
-    private List<photo> mListPhoto;
+    private List<Photo> mListPhoto;
 
 
     @NonNull
@@ -28,7 +28,7 @@ public class PhotoViewPagerAdapter extends PagerAdapter {
         View view = LayoutInflater.from(container.getContext()).inflate(R.layout.item_photo,container,false);
         ImageView imgphoto = view.findViewById(R.id.img_photo);
 
-        photo photo = mListPhoto.get(position);
+        Photo photo = mListPhoto.get(position);
         imgphoto.setImageResource(photo.getResourceId());
         container.addView(view);
         return view;
