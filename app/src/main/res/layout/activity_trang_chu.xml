@@ -46,6 +46,7 @@
     </LinearLayout>
 
 
+
     <RelativeLayout
         android:id="@+id/image_slider"
         android:layout_width="match_parent"
@@ -69,11 +70,14 @@
             app:ci_drawable_unselected="@drawable/bg_indicator_unselect" />
 
     </RelativeLayout>
+
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/image_slider"
         android:layout_above="@+id/navmenu"
+        android:layout_below="@id/image_slider"
         android:layout_margin="20dp">
 
         <GridView
@@ -81,8 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
-            android:numColumns="2" />
+            android:numColumns="2"
+            android:scrollbars="horizontal" />
     </RelativeLayout>
-
 
 </RelativeLayout>
