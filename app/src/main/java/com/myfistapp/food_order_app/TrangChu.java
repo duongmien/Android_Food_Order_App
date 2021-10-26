@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
@@ -30,7 +32,17 @@ public class TrangChu extends AppCompatActivity {
     private ViewPager mViewPager;
     private CircleIndicator mCircleIndicator;
     private List<Photo> mListPhoto;
-
+    private Handler handler = new Handler();
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            if(mViewPager.getCurrentItem()==mListPhoto.size()-1){
+                mViewPager.setCurrentItem(0);
+            }else {
+                mViewPager.setCurrentItem(mViewPager.getCurrentItem() + 1);
+            }
+        }
+    };
     //Khai báo GridView
     GridView gridView;
     String[] ten={
@@ -46,12 +58,13 @@ public class TrangChu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_trang_chu);
 
         //Ánh xạ bottomNavigation
         bottomNavigationView = findViewById(R.id.navmenu);
 
-        //Ánh xạ GridView
+        //Ánh xạ imageslide
         mViewPager =findViewById(R.id.viewpage);
         mCircleIndicator=findViewById(R.id.circle_indicator);
 
@@ -62,6 +75,29 @@ public class TrangChu extends AppCompatActivity {
         mListPhoto = getmListPhoto();
         PhotoViewPagerAdapter adapter = new PhotoViewPagerAdapter(mListPhoto);
         mViewPager.setAdapter(adapter);
+        mViewPager.setPageTransformer(true, new DepthPageTransformer ());
+        mViewPager.setTranslationX(-1 * mViewPager.getWidth() * mViewPager.getCurrentItem());
+        mCircleIndicator.setViewPager(mViewPager);
+
+        handler.postDelayed(runnable,3000);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                handler.removeCallbacks(runnable);
+                handler.postDelayed(runnable,3000);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         //Code GridView
         GridviewAdapter gridviewAdapter=new GridviewAdapter(this,ten,hinh);
@@ -112,4 +148,44 @@ public class TrangChu extends AppCompatActivity {
 
         return list;
     }
+    //slide tranform
+    public class DepthPageTransformer implements ViewPager.PageTransformer {
+        private static final float MIN_SCALE = 0.75f;
+
+        public void transformPage(View view, float position) {
+            int pageWidth = view.getWidth();
+
+            if (position < -1) { // [-Infinity,-1)
+                // This page is way off-screen to the left.
+                view.setAlpha(0f);
+
+            } else if (position <= 0) { // [-1,0]
+                // Use the default slide transition when moving to the left page
+                view.setAlpha(1f);
+                view.setTranslationX(0f);
+                view.setScaleX(1f);
+                view.setScaleY(1f);
+
+            } else if (position <= 1) { // (0,1]
+                // Fade the page out.
+                view.setAlpha(1 - position);
+
+                // Counteract the default slide transition
+                view.setTranslationX(pageWidth * -position);
+
+                // Scale the page down (between MIN_SCALE and 1)
+                float scaleFactor = MIN_SCALE
+                        + (1 - MIN_SCALE) * (1 - Math.abs(position));
+                view.setScaleX(scaleFactor);
+                view.setScaleY(scaleFactor);
+
+            } else { // (1,+Infinity]
+                // This page is way off-screen to the right.
+                view.setAlpha(0f);
+            }
+        }
+    }
+
+
+
 }
