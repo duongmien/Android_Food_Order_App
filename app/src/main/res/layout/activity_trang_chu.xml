@@ -12,38 +12,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/orange"
+        android:background="@color/white"
         app:itemIconTint="@color/custom_color_bottom_navigation"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottom_navigation"
+        app:elevation="10dp"
         />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/header_search"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/orange"
         android:gravity="center"
         android:orientation="horizontal"
+
         android:padding="5dp">
 
         <EditText
-            android:layout_width="303dp"
-            android:layout_height="45dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
             android:background="@color/white"
             android:hint="Tìm kiếm ở đây..."
+            android:layout_toLeftOf="@+id/ic_thongbao"
+            android:layout_marginLeft="20dp"
             android:padding="10dp" />
 
         <ImageButton
+            android:id="@+id/ic_thongbao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginLeft="20dp"
             android:background="@color/orange"
+            android:layout_alignParentEnd="true"
             android:src="@drawable/ic_notifications" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
@@ -75,79 +82,121 @@
         android:id="@+id/danhmuc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center_horizontal"
         android:layout_below="@id/image_slider"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         >
-        <LinearLayout
-            android:id="@+id/danhmuc1"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/xemtatcadm"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="5dp">
-            <ImageButton
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/danh_muc_1"
-                android:layout_gravity="center_horizontal"
-                />
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Danh mục 1"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/danhmuc2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="5dp">
-            <ImageButton
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/danh_muc_2"
-                android:layout_gravity="center_horizontal"
-                />
+                android:text="Danh mục"
+                android:textSize="18sp"/>
             <TextView
+                android:id="@+id/tv_xemtatca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Danh mục 1"/>
-        </LinearLayout><LinearLayout
-        android:id="@+id/danhmuc3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="5dp">
-        <ImageButton
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/danh_muc_3"
-            android:layout_gravity="center_horizontal"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Danh mục 1"/>
-    </LinearLayout><LinearLayout
-        android:id="@+id/danhmuc4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="5dp">
-        <ImageButton
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/danh_muc_4"
-            android:layout_gravity="center_horizontal"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Danh mục 1"/>
-    </LinearLayout>
+                android:text="Xem tất cả"
+                android:layout_toLeftOf="@id/ic_icon"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                />
 
+            <ImageButton
+                android:id="@+id/ic_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:backgroundTint="@color/white"
+
+                android:src="@drawable/ic_arrow_right" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+            <LinearLayout
+                android:id="@+id/danhmuc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+                <ImageButton
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/danh_muc_1"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Danh mục 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/danhmuc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+                <ImageButton
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/danh_muc_2"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Danh mục 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/danhmuc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+                <ImageButton
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/danh_muc_3"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Danh mục 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/danhmuc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+                <ImageButton
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/danh_muc_4"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Danh mục 1"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout
@@ -155,7 +204,11 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/navmenu"
         android:layout_below="@id/danhmuc"
-        android:layout_margin="20dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+
+        >
 
         <GridView
             android:id="@+id/gridview"
