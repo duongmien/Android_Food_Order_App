@@ -44,7 +44,7 @@ public class TrangChu extends AppCompatActivity {
         }
     };
     //Khai báo GridView
-    GridView gridView;
+    ExpandableHeightGridView gridView;
     String[] ten={
             "Món 1","Món 2","Món 3","Món 4","Món 5","Món 6","Món 7","Món 8"
     };
@@ -69,8 +69,8 @@ public class TrangChu extends AppCompatActivity {
         mCircleIndicator=findViewById(R.id.circle_indicator);
 
         //Ánh xạ GridView
-        gridView = findViewById(R.id.gridview);
-
+        gridView =(ExpandableHeightGridView) findViewById(R.id.gridview);
+        gridView.setExpanded(true);
         //Code ImageSlider
         mListPhoto = getmListPhoto();
         PhotoViewPagerAdapter adapter = new PhotoViewPagerAdapter(mListPhoto);

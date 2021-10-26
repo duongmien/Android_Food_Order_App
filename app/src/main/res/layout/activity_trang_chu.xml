@@ -13,11 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
+        app:elevation="10dp"
         app:itemIconTint="@color/custom_color_bottom_navigation"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_navigation"
-        app:elevation="10dp"
-        />
+        app:menu="@menu/bottom_navigation">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <RelativeLayout
         android:id="@+id/header_search"
@@ -32,220 +33,234 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_toLeftOf="@+id/ic_thongbao"
             android:background="@color/white"
             android:hint="Tìm kiếm ở đây..."
-            android:layout_toLeftOf="@+id/ic_thongbao"
-            android:layout_marginLeft="20dp"
             android:padding="10dp" />
 
         <ImageButton
             android:id="@+id/ic_thongbao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
+            android:layout_alignParentEnd="true"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@color/orange"
-            android:layout_alignParentEnd="true"
             android:src="@drawable/ic_notifications" />
 
     </RelativeLayout>
 
-
-
-    <RelativeLayout
-        android:id="@+id/image_slider"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header_search">
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_search"
+        android:layout_above="@id/navmenu">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewpage"
-            android:layout_width="match_parent"
-            android:layout_height="120dp" />
-
-        <me.relex.circleindicator.CircleIndicator
-            android:id="@+id/circle_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_alignBottom="@id/viewpage"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            app:ci_drawable="@drawable/bg_indicator"
-            app:ci_drawable_unselected="@drawable/bg_indicator_unselect" />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/danhmuc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_below="@id/image_slider"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        >
-        <RelativeLayout
-            android:id="@+id/xemtatcadm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Danh mục"
-                android:textSize="18sp"/>
-            <TextView
-                android:id="@+id/tv_xemtatca"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Xem tất cả"
-                android:layout_toLeftOf="@id/ic_icon"
-                android:textColor="@color/orange"
-                android:textSize="18sp"
-                />
-
-            <ImageButton
-                android:id="@+id/ic_icon"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentEnd="true"
-                android:gravity="center"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/ic_arrow_right" />
-        </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
-            <LinearLayout
-                android:id="@+id/danhmuc1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="5dp">
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/danh_muc_1"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpage"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/circle_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignBottom="@id/viewpage"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
-                    />
+                    android:layout_marginTop="5dp"
+                    app:ci_drawable="@drawable/bg_indicator"
+                    app:ci_drawable_unselected="@drawable/bg_indicator_unselect" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/danhmuc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/xemtatcadm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Danh mục"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_xemtatca"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/ic_icon"
+                        android:text="Xem tất cả"
+                        android:textColor="@color/orange"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/ic_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:backgroundTint="@color/white"
+                        android:gravity="center"
+                        android:src="@drawable/ic_arrow_right" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/danhmuc1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/danh_muc_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Danh mục 1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/danhmuc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/danh_muc_2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Danh mục 1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/danhmuc3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/danh_muc_3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Danh mục 1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/danhmuc4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/danh_muc_4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Danh mục 1" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Danh mục 1"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/danhmuc2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="5dp">
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/danh_muc_2"
-                    android:layout_gravity="center_horizontal"
-                    />
+                    android:text="Các món yêu thích"
+                    android:textSize="18sp" />
+
                 <TextView
+                    android:id="@+id/tv_xemtatcayt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Danh mục 1"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/danhmuc3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="5dp">
+                    android:layout_toLeftOf="@id/ic_iconyt"
+                    android:text="Xem tất cả"
+                    android:textColor="@color/orange"
+                    android:textSize="18sp" />
+
                 <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/danh_muc_3"
-                    android:layout_gravity="center_horizontal"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Danh mục 1"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/danhmuc4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="5dp">
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/danh_muc_4"
-                    android:layout_gravity="center_horizontal"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Danh mục 1"/>
-            </LinearLayout>
+                    android:id="@+id/ic_iconyt"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center"
+                    android:src="@drawable/ic_arrow_right" />
+
+                <com.myfistapp.food_order_app.ExpandableHeightGridView
+                    android:id="@+id/gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+
+                    android:layout_marginTop="25dp"
+                    android:numColumns="2"
+                    android:scrollbars="horizontal" />
+
+
+            </RelativeLayout>
+
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/navmenu"
-        android:layout_below="@id/danhmuc"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        >
-        <RelativeLayout
-            android:id="@+id/xemtatcayt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Các món yêu thích"
-                android:textSize="18sp"/>
-            <TextView
-                android:id="@+id/tv_xemtatcayt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Xem tất cả"
-                android:layout_toLeftOf="@id/ic_iconyt"
-                android:textColor="@color/orange"
-                android:textSize="18sp"
-                />
-
-            <ImageButton
-                android:id="@+id/ic_iconyt"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentEnd="true"
-                android:gravity="center"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/ic_arrow_right" />
-        </RelativeLayout>
-        <GridView
-            android:id="@+id/gridview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/xemtatcayt"
-            android:layout_alignParentBottom="true"
-            android:numColumns="2"
-            android:scrollbars="horizontal" />
-    </RelativeLayout>
 
 </RelativeLayout>
