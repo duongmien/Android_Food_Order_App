@@ -1,8 +1,10 @@
-package com.myfistapp.food_order_app;
+package com.myfistapp.food_order_app.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.myfistapp.food_order_app.R;
 
 public class MainActivity extends AppCompatActivity {
 

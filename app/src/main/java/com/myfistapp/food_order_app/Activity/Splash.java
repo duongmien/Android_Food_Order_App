@@ -1,4 +1,4 @@
-package com.myfistapp.food_order_app;
+package com.myfistapp.food_order_app.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.myfistapp.food_order_app.R;
 
 public class Splash extends AppCompatActivity {
     //    Variables

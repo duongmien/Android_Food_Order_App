@@ -1,4 +1,4 @@
-package com.myfistapp.food_order_app;
+package com.myfistapp.food_order_app.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,8 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.myfistapp.food_order_app.Domain.SanPhamDomain;
 import com.myfistapp.food_order_app.Adapter.PhotoViewPagerAdapter;
 import com.myfistapp.food_order_app.Adapter.ReycyclerViewAdapter;
+import com.myfistapp.food_order_app.Photo;
+import com.myfistapp.food_order_app.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.myfistapp.food_order_app;
+package com.myfistapp.food_order_app.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.myfistapp.food_order_app.Domain.SanPhamDomain;
+import com.myfistapp.food_order_app.R;
 
 public class SanPham extends AppCompatActivity {
 

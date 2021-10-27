@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfistapp.food_order_app.Domain.SanPhamDomain;
 import com.myfistapp.food_order_app.R;
-import com.myfistapp.food_order_app.SanPham;
+import com.myfistapp.food_order_app.Activity.SanPham;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.myfistapp.food_order_app;
+package com.myfistapp.food_order_app.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.myfistapp.food_order_app.R;
 
 public class DangNhap extends AppCompatActivity {
     ImageView img_login, img_ig, img_fb, img_gg;
