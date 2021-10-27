@@ -2,6 +2,8 @@ package com.myfistapp.food_order_app;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -9,14 +11,13 @@ import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.myfistapp.food_order_app.adapter.GridviewAdapter;
-import com.myfistapp.food_order_app.adapter.PhotoViewPagerAdapter;
+import com.myfistapp.food_order_app.Domain.SanPhamDomain;
+import com.myfistapp.food_order_app.Adapter.PhotoViewPagerAdapter;
+import com.myfistapp.food_order_app.Adapter.ReycyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,8 @@ import java.util.List;
 import me.relex.circleindicator.CircleIndicator;
 
 public class TrangChu extends AppCompatActivity {
+    private RecyclerView.Adapter  adapter;
+    private RecyclerView  recyclerViewPopularList;
 
     //Khai báo botomNavigation
     private BottomNavigationView bottomNavigationView;
@@ -43,17 +46,7 @@ public class TrangChu extends AppCompatActivity {
             }
         }
     };
-    //Khai báo GridView
-    ExpandableHeightGridView gridView;
-    String[] ten={
-            "Món 1","Món 2","Món 3","Món 4","Món 5","Món 6","Món 7","Món 8"
-    };
-    int[] hinh={
-            R.drawable.favorite_food_1,R.drawable.favorite_food_2,
-            R.drawable.favorite_food_3,R.drawable.favorite_food_4,
-            R.drawable.favorite_food_5,R.drawable.favorite_food_6,
-            R.drawable.favorite_food_7,R.drawable.favorite_food_8
-    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,10 +61,7 @@ public class TrangChu extends AppCompatActivity {
         mViewPager =findViewById(R.id.viewpage);
         mCircleIndicator=findViewById(R.id.circle_indicator);
 
-        //Ánh xạ GridView
-        gridView =(ExpandableHeightGridView) findViewById(R.id.gridview);
-        gridView.setExpanded(true);
-        //Code ImageSlider
+          //Code ImageSlider
         mListPhoto = getmListPhoto();
         PhotoViewPagerAdapter adapter = new PhotoViewPagerAdapter(mListPhoto);
         mViewPager.setAdapter(adapter);
@@ -99,16 +89,7 @@ public class TrangChu extends AppCompatActivity {
             }
         });
 
-        //Code GridView
-        GridviewAdapter gridviewAdapter=new GridviewAdapter(this,ten,hinh);
-        gridView.setAdapter(gridviewAdapter);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(TrangChu.this, ten[i], Toast.LENGTH_SHORT).show();
-            }
-        });
-
+         recyclerViewPopular();
         //Code bottomNavigation
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -186,6 +167,26 @@ public class TrangChu extends AppCompatActivity {
         }
     }
 
+    private void recyclerViewPopular() {
+        int numcol=2;
+        recyclerViewPopularList = findViewById(R.id.recycleview_danhsach);
+        recyclerViewPopularList.setLayoutManager(new GridLayoutManager(this,2));
+
+        ArrayList<SanPhamDomain> danhsachsanpham = new ArrayList<>();
+        danhsachsanpham.add(new SanPhamDomain("Salad Trứng","favorite_food_1","Salad trứng thơm ngon với các nguyên liệu organic phù hợp với chế độ ăn kiêng ít dầu mỡ. Thành phần: xà lách, dầu ô liu, trứng, vừng...","30","328","79000","4.9"));
+        danhsachsanpham.add(new SanPhamDomain("Mì Ý Rigatoni","favorite_food_2","Salad trứng thơm ngon với các nguyên liệu organic phù hợp với chế độ ăn kiêng ít dầu mỡ. Thành phần: xà lách, dầu ô liu, trứng, vừng...","20","111","98000","4.0"));
+        danhsachsanpham.add(new SanPhamDomain("Chicken Hamburger","favorite_food_3","Salad trứng thơm ngon với các nguyên liệu organic phù hợp với chế độ ăn kiêng ít dầu mỡ. Thành phần: xà lách, dầu ô liu, trứng, vừng...","15","33","45000","4.9"));
+        danhsachsanpham.add(new SanPhamDomain("Salad Cá Hồi","favorite_food_4","Salad trứng thơm ngon với các nguyên liệu organic phù hợp với chế độ ăn kiêng ít dầu mỡ. Thành phần: xà lách, dầu ô liu, trứng, vừng...","35","123","23000","5"));
+        danhsachsanpham.add(new SanPhamDomain("Bánh Muffin","favorite_food_5","Salad trứng thơm ngon với các nguyên liệu organic phù hợp với chế độ ăn kiêng ít dầu mỡ. Thành phần: xà lách, dầu ô liu, trứng, vừng...","25","532","41000","3.9"));
+        danhsachsanpham.add(new SanPhamDomain("Nước ép dưa hấu","favorite_food_6","Salad trứng thơm ngon với các nguyên liệu organic phù hợp với chế độ ăn kiêng ít dầu mỡ. Thành phần: xà lách, dầu ô liu, trứng, vừng...","10","123","12000","4.9"));
+        danhsachsanpham.add(new SanPhamDomain("Trái cây mix","favorite_food_7","Salad trứng thơm ngon với các nguyên liệu organic phù hợp với chế độ ăn kiêng ít dầu mỡ. Thành phần: xà lách, dầu ô liu, trứng, vừng...","30","112","44000","4.9"));
+        danhsachsanpham.add(new SanPhamDomain("Nghêu sốt bơ tỏi","favorite_food_8","Salad trứng thơm ngon với các nguyên liệu organic phù hợp với chế độ ăn kiêng ít dầu mỡ. Thành phần: xà lách, dầu ô liu, trứng, vừng...","20","423","22000","5"));
+
+
+        adapter = new ReycyclerViewAdapter(danhsachsanpham);
+        recyclerViewPopularList.setAdapter(adapter);
+
+    }
 
 
 }

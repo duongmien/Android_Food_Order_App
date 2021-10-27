@@ -1,4 +1,4 @@
-package com.myfistapp.food_order_app.adapter;
+package com.myfistapp.food_order_app.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
