@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.myfistapp.food_order_app.Domain.SanPhamDomain;
+import com.myfistapp.food_order_app.ManagementCart;
 import com.myfistapp.food_order_app.R;
 
 public class SanPham extends AppCompatActivity {
@@ -18,6 +19,7 @@ public class SanPham extends AppCompatActivity {
     private TextView txt_tensanpham,txt_giasanpham,txt_soluongsanpham,txt_danhgia,txt_thoigian,txt_kcal,txt_thongtinsanpham;
     private ImageView btn_cong,btn_tru,img_sanpham;
     private SanPhamDomain object;
+    private ManagementCart managementCart;
 
     private int soluong = 1;
     @Override
@@ -26,6 +28,7 @@ public class SanPham extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_san_pham);
 
+        managementCart = new ManagementCart(this);
         initView();
         getBundle();
     }
@@ -70,7 +73,7 @@ public class SanPham extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 object.setSoluongdathang(soluong);
-                //managementCart.insertFood(object);
+                managementCart.insertFood(object);
             }
         });
     }
@@ -86,7 +89,7 @@ public class SanPham extends AppCompatActivity {
         txt_thongtinsanpham = findViewById(R.id.txt_thongtinsanpham);
         btn_cong = findViewById(R.id.btn_cong);
         btn_tru = findViewById(R.id.btn_tru);
-        img_sanpham = findViewById(R.id.img_sanpham);
+        img_sanpham = findViewById(R.id.img_sanpham_giohang);
     }
 
 }

@@ -64,7 +64,7 @@ public class ReycyclerViewAdapter extends RecyclerView.Adapter<ReycyclerViewAdap
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txttensanpham = itemView.findViewById(R.id.txt_tensanpham);
-            imgsanpham = itemView.findViewById(R.id.img_sanpham);
+            imgsanpham = itemView.findViewById(R.id.img_sanpham_giohang);
 
         }
     }

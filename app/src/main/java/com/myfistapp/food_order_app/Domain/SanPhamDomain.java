@@ -84,14 +84,6 @@ public class SanPhamDomain implements Serializable {
         this.giasanpham = giasanpham;
     }
 
-    public int getSoluongsanpham() {
-        return soluongdathang;
-    }
-
-    public void setSoluongsanpham(int soluongsanpham) {
-        this.soluongdathang = soluongsanpham;
-    }
-
     public String getDanhgiasanpham() {
         return danhgiasanpham;
     }

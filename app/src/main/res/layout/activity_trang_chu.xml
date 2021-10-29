@@ -23,11 +23,12 @@
     <RelativeLayout
         android:id="@+id/header_search"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:background="@color/orange"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:paddingTop="35dp"
+        android:paddingBottom="35dp">
 
         <EditText
             android:layout_width="match_parent"

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Food_Order_App">
         <activity
+            android:name=".Activity.GioHang"
+            android:exported="true" />
+        <activity
             android:name=".Activity.SanPham"
             android:exported="true" />
         <activity
@@ -21,7 +24,11 @@
         <activity
             android:name=".Activity.TrangChu"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Activity.DangNhap"
@@ -29,11 +36,7 @@
         <activity
             android:name=".Activity.Splash"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Activity.MainActivity"

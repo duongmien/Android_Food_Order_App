@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -107,7 +108,7 @@ public class TrangChu extends AppCompatActivity {
                         break;
 
                     case R.id.nav_cart:
-                        Toast.makeText(TrangChu.this, "Cart Page", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(TrangChu.this, GioHang.class));
                         break;
 
                     case R.id.nav_profile:
