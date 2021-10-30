@@ -1,6 +1,5 @@
 package com.myfistapp.food_order_app.Adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,8 +99,8 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.ViewHold
             pic = itemView.findViewById(R.id.img_sanpham_giohang);
 //            totalEachItem = itemView.findViewById(R.id.totalEachItem);
             num = itemView.findViewById(R.id.txt_soluongsanpham);
-            plusItem = itemView.findViewById(R.id.btn_tru);
-            minusItem = itemView.findViewById(R.id.btn_cong);
+            plusItem = itemView.findViewById(R.id.btn_cong);
+            minusItem = itemView.findViewById(R.id.btn_tru);
         }
     }
 }

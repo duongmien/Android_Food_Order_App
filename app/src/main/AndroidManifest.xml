@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Food_Order_App">
+
         <activity
             android:name=".Activity.GioHang"
             android:exported="true" />
@@ -22,7 +23,7 @@
             android:name=".Activity.DangKy"
             android:exported="true" />
         <activity
-            android:name=".Activity.TrangChu"
+            android:name=".Activity.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +35,7 @@
             android:name=".Activity.DangNhap"
             android:exported="true" />
         <activity
-            android:name=".Activity.Splash"
+            android:name=".Activity.TrangChu"
             android:exported="true">
 
         </activity>
