@@ -27,6 +27,8 @@
             android:textColor="@color/white"
             android:textSize="28dp"
             android:textStyle="bold" />
+
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -48,19 +50,27 @@
             android:id="@+id/diachi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Địa chỉ:"
-            android:textSize="24sp"
             android:fontFamily="@font/opensans"
-            android:textColor="@color/orange"/>
+            android:text="Địa chỉ:"
+            android:textColor="@color/orange"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txt_diachi"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/diachi"
             android:fontFamily="@font/opensans"
-            android:text="48 Cao Thắng:"
-            android:textSize="20sp" />
+            android:text="48 Cao Thắng - Thanh Bình - Hải Châu - Đà Nẵng"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_margin="2dp"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_arrow_forward" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -73,8 +83,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/bg_gio_hang"
-        android:elevation="5dp"
-        >
+        android:elevation="5dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleview_danhsach"

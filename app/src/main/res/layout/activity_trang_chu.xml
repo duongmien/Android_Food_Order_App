@@ -34,9 +34,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
+
             android:layout_marginLeft="20dp"
             android:layout_toLeftOf="@+id/ic_thongbao"
-            android:background="@color/white"
+            android:background="@drawable/bg_searchbox"
             android:hint="Tìm kiếm ở đây..."
             android:padding="10dp" />
 
@@ -100,8 +101,6 @@
                     android:id="@+id/xemtatcadm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp">
 
@@ -135,16 +134,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:id="@+id/danhmuc1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="67dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <ImageButton
@@ -156,8 +155,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:fontFamily="@font/dancingscript"
-                            android:text="Danh mục 1" />
+                            android:text="Hamburger" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -165,6 +165,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <ImageButton
@@ -176,8 +177,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:fontFamily="@font/dancingscript"
-                            android:text="Danh mục 1" />
+                            android:text="Pizza" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -185,6 +187,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <ImageButton
@@ -196,8 +199,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:fontFamily="@font/dancingscript"
-                            android:text="Danh mục 1" />
+                            android:text="Gà" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -205,6 +209,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <ImageButton
@@ -216,8 +221,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:fontFamily="@font/dancingscript"
-                            android:text="Danh mục 1" />
+                            android:text="Soup" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -226,14 +232,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans"
-                    android:text="Các món yêu thích"
+                    android:text="Các món phổ biến"
                     android:textSize="18sp" />
 
                 <TextView
@@ -259,7 +265,7 @@
                     android:id="@+id/recycleview_danhsach"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"/>
+                    android:layout_marginTop="25dp" />
 
             </RelativeLayout>
         </LinearLayout>
