@@ -61,6 +61,7 @@ public class DangNhap extends AppCompatActivity {
         img_gg.setAnimation(bottomAnim);
         img_fb.setAnimation(bottomAnim);
         img_ig.setAnimation(bottomAnim);
+        //
         SharedPreferences preferences= getSharedPreferences("checkbox",MODE_PRIVATE);
         String state_checkbox= preferences.getString("remember","");
         if(state_checkbox.equals("true")){

@@ -1,8 +1,7 @@
 package com.myfistapp.food_order_app.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -11,6 +10,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.myfistapp.food_order_app.R;
 
@@ -39,6 +41,14 @@ public class Splash extends AppCompatActivity {
         home_bg.setAnimation(topAnim);
         login.setAnimation(bottomAnim);
         signup.setAnimation(bottomAnim);
+        SharedPreferences preferences= getSharedPreferences("checkbox",MODE_PRIVATE);
+        String state_checkbox= preferences.getString("remember","");
+        if(state_checkbox.equals("true")){
+            Intent intent= new Intent(Splash.this,TrangChu.class);
+            startActivity(intent);
+        }else if (state_checkbox.equals("false")){
+            Toast.makeText(this,"Please Sign in",Toast.LENGTH_SHORT).show();
+        }
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
