@@ -47,15 +47,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:width="330dp"
         android:height="60dp"
         android:background="@drawable/edit_text_border"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="20dp"
         android:hint="Nhập password..."
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp" />
 
     <Button
         android:id="@+id/bt_login"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/pass"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:width="330dp"
         android:height="55dp"
         android:background="@drawable/button_bg"
@@ -72,32 +72,44 @@
         android:textColor="@color/white"
         android:textSize="23dp"
         android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nhớ tài khoản"
+        android:layout_below="@id/bt_login"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/opensans"
+        android:textColor="#FF6838" />
+
     <ImageView
         android:id="@+id/img_gg"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/bt_login"
+        android:layout_below="@id/checkbox"
+        android:layout_marginTop="5dp"
         android:layout_toLeftOf="@id/img_IG"
-        android:layout_marginTop="20dp"
         android:src="@drawable/gg" />
 
     <ImageView
         android:id="@+id/img_IG"
         android:layout_width="35dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/bt_login"
+        android:layout_below="@id/checkbox"
+        android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:src="@drawable/ig"
-        android:layout_marginTop="20dp"/>
+        android:src="@drawable/ig" />
     <ImageView
         android:id="@+id/img_fb"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/bt_login"
         android:src="@drawable/fb"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/checkbox"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/img_IG"/>
 
     <TextView
@@ -111,7 +123,7 @@
         android:text="Quên mật khẩu?"
         android:textColor="#FF6838"
         android:textSize="15sp"
-        android:textStyle  ="bold" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/text_signup"

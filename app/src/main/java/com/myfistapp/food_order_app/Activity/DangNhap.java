@@ -1,17 +1,21 @@
 package com.myfistapp.food_order_app.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.myfistapp.food_order_app.R;
 
@@ -21,6 +25,7 @@ public class DangNhap extends AppCompatActivity {
     EditText username, pass;
     Button bt_signin;
     Animation topAnim, bottomAnim, leftAnim;
+    CheckBox checkbox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,7 @@ public class DangNhap extends AppCompatActivity {
         img_fb=findViewById(R.id.img_fb);
         img_ig=findViewById(R.id.img_IG);
         img_gg=findViewById(R.id.img_gg);
+        checkbox=findViewById(R.id.checkbox);
         text_singin=findViewById(R.id.textDN);
         text_sigup=findViewById(R.id.text_signup);
         text_forgetpass=findViewById(R.id.quenmatkhau);
@@ -48,13 +54,21 @@ public class DangNhap extends AppCompatActivity {
         bt_signin.setAnimation(leftAnim);
         username.setAnimation(leftAnim);
         pass.setAnimation(leftAnim);
+        checkbox.setAnimation(leftAnim);
 //
         text_sigup.setAnimation(bottomAnim);
         text_forgetpass.setAnimation(bottomAnim);
         img_gg.setAnimation(bottomAnim);
         img_fb.setAnimation(bottomAnim);
         img_ig.setAnimation(bottomAnim);
-
+        SharedPreferences preferences= getSharedPreferences("checkbox",MODE_PRIVATE);
+        String state_checkbox= preferences.getString("remember","");
+        if(state_checkbox.equals("true")){
+            Intent intent= new Intent(DangNhap.this,TrangChu.class);
+            startActivity(intent);
+        }else if (state_checkbox.equals("false")){
+            Toast.makeText(this,"Please Sign in",Toast.LENGTH_SHORT).show();
+        }
         text_sigup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +83,25 @@ public class DangNhap extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),TrangChu.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+        checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(compoundButton.isChecked()){
+                    SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=preferences.edit();
+                    editor.putString("remember","true");
+                    editor.apply();
+                    Toast.makeText(DangNhap.this, "Checked",Toast.LENGTH_SHORT).show();
+                }
+                else if(!compoundButton.isChecked()){
+                    SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=preferences.edit();
+                    editor.putString("remember","false");
+                    editor.apply();
+                    Toast.makeText(DangNhap.this, "Un Checked",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
