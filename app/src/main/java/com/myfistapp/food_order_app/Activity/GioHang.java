@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -36,7 +37,7 @@ public class GioHang extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gio_hang);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         managementCart = new ManagementCart(this);
 
 
@@ -74,14 +75,14 @@ public class GioHang extends AppCompatActivity {
 
     private void bottomNavigation() {
         bottomNavigationView = findViewById(R.id.navmenu);
-
+        bottomNavigationView.setSelectedItemId(R.id.nav_cart);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()){
                     case R.id.nav_home:
-                        startActivity(new Intent(GioHang.this, MainActivity.class));
+                        startActivity(new Intent(GioHang.this, TrangChu.class));
                         break;
 
                     case R.id.nav_favorite:

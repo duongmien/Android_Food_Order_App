@@ -93,7 +93,8 @@ public class TrangChu extends AppCompatActivity {
         });
 
          recyclerViewPopular();
-        //Code bottomNavigation
+        //Code
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
