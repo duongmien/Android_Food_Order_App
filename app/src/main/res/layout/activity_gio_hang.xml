@@ -150,12 +150,12 @@
             android:src="@drawable/ic_arrow_forward" />
 
         <TextView
+            android:id="@+id/txt_pttt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/img_line"
             android:layout_toStartOf="@+id/img_arrow"
             android:fontFamily="@font/opensans"
-            android:text="COD"
             android:textColor="@color/orange" />
 
 

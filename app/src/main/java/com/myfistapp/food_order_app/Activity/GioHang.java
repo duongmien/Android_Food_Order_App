@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,9 +27,10 @@ public class GioHang extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
     private ManagementCart managementCart;
-    private TextView tongtien, tongsanpham,emptyTxt,btndathang;
+    private TextView tongtien, tongsanpham,emptyTxt,btndathang,pttt;
     private RelativeLayout rediachi,redanhsach,rethanhtoan;
     private BottomNavigationView bottomNavigationView;
+    private ImageView btnpttt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +39,32 @@ public class GioHang extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         managementCart = new ManagementCart(this);
 
-
         initView();
+
+        Intent intent = getIntent();
+        String Pttt = intent.getStringExtra("PTTT");
+        pttt.setText(Pttt);
+
         initList();
         calculateCard();
         bottomNavigation();
+
+        btnpttt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(GioHang.this, ThanhToan.class));
+            }
+        });
+        btndathang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(pttt.getText()==""){
+                    Toast.makeText(GioHang.this, "Hãy chọn phương thức thanh toán", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(GioHang.this, "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void initList() {
@@ -116,6 +139,8 @@ public class GioHang extends AppCompatActivity {
         redanhsach= findViewById(R.id.re_danhsach);
         rethanhtoan= findViewById(R.id.re_thanhtoan);
         btndathang= findViewById(R.id.btn_dathang);
+        pttt= findViewById(R.id.txt_pttt);
+        btnpttt= findViewById(R.id.img_arrow);
 
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".Activity.ThanhToan">
 
     <TextView
-        android:id="@+id/btn_dathang3"
+        android:id="@+id/btn_dongy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -16,6 +16,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/bg_orange_button"
+        android:fontFamily="@font/opensans"
         android:gravity="center"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
@@ -46,7 +47,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/btn_dathang3"
+        android:layout_above="@id/btn_dongy"
         android:layout_below="@id/re_header"
         android:layout_marginTop="10dp">
 
@@ -79,6 +80,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toLeftOf="@id/img_forward_arrow1"
                 android:layout_toRightOf="@id/img_cod"
+                android:fontFamily="@font/opensans"
                 android:text="Thanh toán khi nhận hàng"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -133,7 +135,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toLeftOf="@id/img_forward_arrow2"
                 android:layout_toRightOf="@id/img_momo"
-                android:text="Ví momo"
+                android:fontFamily="@font/opensans"
+                android:text="Ví Momo"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -186,6 +189,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toLeftOf="@id/img_forward_arrow3"
                 android:layout_toRightOf="@id/img_zalo"
+                android:fontFamily="@font/opensans"
                 android:text="Ví ZaloPay"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -239,6 +243,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toLeftOf="@id/img_forward_arrow4"
                 android:layout_toRightOf="@id/img_banking"
+                android:fontFamily="@font/opensans"
                 android:text="Tài khoản ngân hàng"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
