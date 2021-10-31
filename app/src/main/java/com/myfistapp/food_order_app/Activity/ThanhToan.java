@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.myfistapp.food_order_app.R;
+
 public class ThanhToan extends AppCompatActivity {
 
     @Override
