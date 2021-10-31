@@ -22,7 +22,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginBottom="-15dp"
-        android:src="@drawable/rate_fivestar" />
+        android:src="@drawable/img_rate_fivestar" />
 
     <TextView
         android:id="@+id/txt_tensanpham"

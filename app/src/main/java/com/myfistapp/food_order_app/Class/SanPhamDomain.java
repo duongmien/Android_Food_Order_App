@@ -1,7 +1,4 @@
-package com.myfistapp.food_order_app.Domain;
-
-import android.widget.ImageView;
-import android.widget.TextView;
+package com.myfistapp.food_order_app.Class;
 
 import java.io.Serializable;
 

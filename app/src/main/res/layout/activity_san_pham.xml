@@ -25,14 +25,14 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                app:srcCompat="@drawable/favorite_food_1"
+                app:srcCompat="@drawable/img_favorite_food_1"
                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/infor_background"
+                android:background="@drawable/bg_infor"
                 android:orientation="vertical">
 
                 <TextView
@@ -83,7 +83,7 @@
                             android:id="@+id/btn_tru"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/minus" />
+                            app:srcCompat="@drawable/img_icon_minus" />
 
                         <TextView
                             android:id="@+id/txt_soluongsanpham"
@@ -101,7 +101,7 @@
                             android:id="@+id/btn_cong"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/plus" />
+                            app:srcCompat="@drawable/img_icon_plus" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -220,7 +220,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/orange_button_background"
+        android:background="@drawable/bg_orange_button"
+        android:fontFamily="@font/opensans"
         android:gravity="center"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"

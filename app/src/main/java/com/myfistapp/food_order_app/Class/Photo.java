@@ -1,4 +1,4 @@
-package com.myfistapp.food_order_app;
+package com.myfistapp.food_order_app.Class;
 
 public class Photo {
     private int resourceId;

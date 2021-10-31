@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-400dp"
-        android:src="@drawable/login" />
+        android:src="@drawable/img_icon_login" />
 
     <TextView
         android:id="@+id/textDN"
@@ -34,7 +34,8 @@
         android:layout_marginTop="10dp"
         android:width="330dp"
         android:height="60dp"
-        android:background="@drawable/edit_text_border"
+        android:background="@drawable/bg_edit_text_border"
+        android:fontFamily="@font/opensans"
         android:hint="Nhập username hoặc email..."
         android:inputType="text"
         android:paddingLeft="20dp"
@@ -50,7 +51,8 @@
         android:layout_marginTop="20dp"
         android:width="330dp"
         android:height="60dp"
-        android:background="@drawable/edit_text_border"
+        android:background="@drawable/bg_edit_text_border"
+        android:fontFamily="@font/opensans"
         android:hint="Nhập password..."
         android:inputType="textPassword"
         android:paddingLeft="20dp"
@@ -66,7 +68,7 @@
         android:layout_marginTop="20dp"
         android:width="330dp"
         android:height="55dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/bg_button"
         android:fontFamily="@font/opensans"
         android:text="ĐĂNG NHẬP"
         android:textColor="@color/white"
@@ -77,11 +79,11 @@
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nhớ tài khoản"
         android:layout_below="@id/bt_login"
-        android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/opensans"
+        android:text="Nhớ tài khoản"
         android:textColor="#FF6838" />
 
     <ImageView
@@ -91,7 +93,7 @@
         android:layout_below="@id/checkbox"
         android:layout_marginTop="5dp"
         android:layout_toLeftOf="@id/img_IG"
-        android:src="@drawable/gg" />
+        android:src="@drawable/img_con_gg" />
 
     <ImageView
         android:id="@+id/img_IG"
@@ -102,12 +104,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:src="@drawable/ig" />
+        android:src="@drawable/img_icon_ig" />
     <ImageView
         android:id="@+id/img_fb"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:src="@drawable/fb"
+        android:src="@drawable/img_icon_fb"
         android:layout_below="@id/checkbox"
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/img_IG"/>

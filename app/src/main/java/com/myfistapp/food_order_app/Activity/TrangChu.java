@@ -16,10 +16,10 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.myfistapp.food_order_app.Domain.SanPhamDomain;
+import com.myfistapp.food_order_app.Class.SanPhamDomain;
 import com.myfistapp.food_order_app.Adapter.PhotoViewPagerAdapter;
 import com.myfistapp.food_order_app.Adapter.ReycyclerViewAdapter;
-import com.myfistapp.food_order_app.Photo;
+import com.myfistapp.food_order_app.Class.Photo;
 import com.myfistapp.food_order_app.R;
 
 import java.util.ArrayList;
@@ -127,9 +127,9 @@ public class TrangChu extends AppCompatActivity {
     //Thêm ảnh Slider
     private List<Photo> getmListPhoto(){
         List<Photo> list = new ArrayList<>();
-        list.add(new Photo((R.drawable.banner1)));
-        list.add(new Photo((R.drawable.banner2)));
-        list.add(new Photo((R.drawable.banner1)));
+        list.add(new Photo((R.drawable.img_banner1)));
+        list.add(new Photo((R.drawable.img_banner2)));
+        list.add(new Photo((R.drawable.img_banner1)));
 
         return list;
     }

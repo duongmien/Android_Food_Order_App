@@ -11,9 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.myfistapp.food_order_app.Domain.SanPhamDomain;
+import com.myfistapp.food_order_app.Class.SanPhamDomain;
 import com.myfistapp.food_order_app.Interface.ChangeNumberItemsListener;
-import com.myfistapp.food_order_app.ManagementCart;
+import com.myfistapp.food_order_app.Helper.ManagementCart;
 import com.myfistapp.food_order_app.R;
 
 import java.util.ArrayList;

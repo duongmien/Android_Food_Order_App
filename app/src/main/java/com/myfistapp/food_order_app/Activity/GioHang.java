@@ -10,18 +10,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.myfistapp.food_order_app.Adapter.GioHangAdapter;
 import com.myfistapp.food_order_app.Interface.ChangeNumberItemsListener;
-import com.myfistapp.food_order_app.ManagementCart;
+import com.myfistapp.food_order_app.Helper.ManagementCart;
 import com.myfistapp.food_order_app.R;
 
 public class GioHang extends AppCompatActivity {

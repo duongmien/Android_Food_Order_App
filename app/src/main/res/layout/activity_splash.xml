@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-400dp"
-        android:src="@drawable/home1"
+        android:src="@drawable/img_home1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,18 +26,19 @@
         android:text="Sunshine"
         android:textColor="#FF6838"
         android:textSize="70sp" />
+
     <TextView
         android:id="@+id/slogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
-        android:text="Việc gì khó đã có SunShine - Ăn ngon không lo về giá
-"       android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:textColor="#FFA801"
-        android:lineHeight="20dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/opensans"
-        />
+        android:lineHeight="20dp"
+        android:text="Việc gì khó đã có SunShine - Ăn ngon không lo về giá
+"
+        android:textColor="#FFA801" />
 
     <Button
         android:id="@+id/bt_login"
@@ -48,7 +49,7 @@
         android:layout_marginTop="50dp"
         android:width="330dp"
         android:height="60dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/bg_button"
         android:fontFamily="@font/opensans"
         android:text="ĐĂNG NHẬP"
         android:textColor="@color/white"
@@ -64,7 +65,7 @@
         android:layout_marginTop="44dp"
         android:width="330dp"
         android:height="60dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/bg_button"
         android:fontFamily="@font/opensans"
         android:text="ĐĂNG KÝ"
         android:textColor="@color/white"

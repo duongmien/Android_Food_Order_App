@@ -1,10 +1,10 @@
-package com.myfistapp.food_order_app;
+package com.myfistapp.food_order_app.Helper;
 
 
 import android.content.Context;
 import android.widget.Toast;
 
-import com.myfistapp.food_order_app.Domain.SanPhamDomain;
+import com.myfistapp.food_order_app.Class.SanPhamDomain;
 import com.myfistapp.food_order_app.Interface.ChangeNumberItemsListener;
 
 import java.util.ArrayList;

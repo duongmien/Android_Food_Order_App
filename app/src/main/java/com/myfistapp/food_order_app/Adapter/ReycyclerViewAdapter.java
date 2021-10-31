@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.myfistapp.food_order_app.Domain.SanPhamDomain;
+import com.myfistapp.food_order_app.Class.SanPhamDomain;
 import com.myfistapp.food_order_app.R;
 import com.myfistapp.food_order_app.Activity.SanPham;
 
@@ -27,7 +27,7 @@ public class ReycyclerViewAdapter extends RecyclerView.Adapter<ReycyclerViewAdap
     @NonNull
     @Override
     public ReycyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.holder_danhsachsanpham, parent, false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.holder_danhsach_sanpham, parent, false);
 
         return new ViewHolder(inflate);
     }

@@ -38,6 +38,7 @@
             android:layout_marginLeft="20dp"
             android:layout_toLeftOf="@+id/ic_thongbao"
             android:background="@drawable/bg_searchbox"
+            android:fontFamily="@font/opensans"
             android:hint="Tìm kiếm ở đây..."
             android:padding="10dp" />
 
@@ -150,7 +151,7 @@
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/danh_muc_1" />
+                            android:src="@drawable/img_danh_muc_1" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -172,7 +173,7 @@
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/danh_muc_2" />
+                            android:src="@drawable/img_danh_muc_2" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -194,7 +195,7 @@
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/danh_muc_3" />
+                            android:src="@drawable/img_danh_muc_3" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -216,7 +217,7 @@
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/danh_muc_4" />
+                            android:src="@drawable/img_danh_muc_4" />
 
                         <TextView
                             android:layout_width="wrap_content"
