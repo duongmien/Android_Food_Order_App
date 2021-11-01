@@ -61,14 +61,18 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/diachi"
             android:fontFamily="@font/opensans"
-            android:text="48 Cao Thắng - Thanh Bình - Hải Châu - Đà Nẵng"
+            android:text=""
             android:textSize="16sp" />
 
         <ImageView
-            android:layout_margin="2dp"
+            android:id="@+id/btn_diachi"
             android:layout_width="19dp"
             android:layout_height="19dp"
             android:layout_alignParentRight="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             android:src="@drawable/ic_arrow_forward" />
 
     </RelativeLayout>
@@ -177,7 +181,7 @@
         android:paddingBottom="10dp"
         android:text="ĐẶT HÀNG"
         android:textColor="#FFFFFF"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
     <TextView
         android:id="@+id/emptyTxt"

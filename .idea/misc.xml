@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/drawable/bg_edit_text_border.xml" value="0.22864583333333333" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/drawable/bg_gio_hang.xml" value="0.22864583333333333" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/drawable/bg_indicator.xml" value="0.22864583333333333" />
+        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/drawable/bg_line.xml" value="0.22864583333333333" />
+        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/drawable/bg_orange_button.xml" value="0.22864583333333333" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/drawable/bg_underline_textview.xml" value="0.2" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/drawable/bottom_nav_background.xml" value="0.22864583333333333" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/drawable/checkbox_selector.xml" value="0.22864583333333333" />
@@ -21,12 +24,13 @@
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/drawable/orange_button_background.xml" value="0.22864583333333333" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_dang_ky.xml" value="0.2" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_dang_nhap.xml" value="0.22" />
-        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_gio_hang.xml" value="0.67" />
+        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_dia_chi.xml" value="0.22" />
+        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_gio_hang.xml" value="0.25" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_san_pham.xml" value="0.22" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_splash.xml" value="0.16" />
-        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_thanh_toan.xml" value="0.21" />
-        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_trang_chu.xml" value="0.33" />
+        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_thanh_toan.xml" value="0.18" />
+        <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/activity_trang_chu.xml" value="0.22" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/fragment_trang_chu.xml" value="0.1644021739130435" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/gridview_row.xml" value="0.25" />
         <entry key="..\:/AndroidProject/Android_Food_Order_App/app/src/main/res/layout/holder_danhsachsanpham.xml" value="0.25" />

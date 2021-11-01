@@ -30,7 +30,7 @@ public class GioHang extends AppCompatActivity {
     private TextView tongtien, tongsanpham,emptyTxt,btndathang,pttt;
     private RelativeLayout rediachi,redanhsach,rethanhtoan;
     private BottomNavigationView bottomNavigationView;
-    private ImageView btnpttt;
+    private ImageView btnpttt,btndiachi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,13 @@ public class GioHang extends AppCompatActivity {
         initList();
         calculateCard();
         bottomNavigation();
+
+        btndiachi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(GioHang.this, DiaChi.class));
+            }
+        });
 
         btnpttt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,6 +148,6 @@ public class GioHang extends AppCompatActivity {
         btndathang= findViewById(R.id.btn_dathang);
         pttt= findViewById(R.id.txt_pttt);
         btnpttt= findViewById(R.id.img_arrow);
-
+        btndiachi= findViewById(R.id.btn_diachi);
     }
 }

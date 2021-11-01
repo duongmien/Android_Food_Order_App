@@ -227,7 +227,7 @@
         android:paddingBottom="10dp"
         android:text="THÊM VÀO GIỎ HÀNG"
         android:textColor="#FFFFFF"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
