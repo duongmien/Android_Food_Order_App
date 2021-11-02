@@ -52,7 +52,7 @@ public class GioHang extends AppCompatActivity {
         btndiachi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(GioHang.this, DiaChi.class));
+                startActivity(new Intent(GioHang.this, LienHe.class));
             }
         });
 

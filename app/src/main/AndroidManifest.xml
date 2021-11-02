@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Food_Order_App">
         <activity
-            android:name=".Activity.DiaChi"
+            android:name=".Activity.LienHe"
             android:exported="true" />
         <activity
             android:name=".Activity.ThanhToan"
