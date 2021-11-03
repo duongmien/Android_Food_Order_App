@@ -12,6 +12,7 @@ public class SanPhamDomain implements Serializable {
     private int soluongdathang;
     private String danhgiasanpham;
 
+
     public SanPhamDomain(String tensanpham, String anhsanpham, String thongtinsanpham, String thoigian, String kcal, String giasanpham, String danhgiasanpham) {
         this.tensanpham = tensanpham;
         this.anhsanpham = anhsanpham;

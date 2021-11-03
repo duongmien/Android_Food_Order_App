@@ -193,6 +193,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:visibility="visible" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
 
         android:id="@+id/navmenu"

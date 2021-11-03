@@ -1,10 +1,5 @@
 package com.myfistapp.food_order_app.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -15,12 +10,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.myfistapp.food_order_app.Adapter.GioHangAdapter;
-import com.myfistapp.food_order_app.Interface.ChangeNumberItemsListener;
 import com.myfistapp.food_order_app.Helper.ManagementCart;
+import com.myfistapp.food_order_app.Interface.ChangeNumberItemsListener;
 import com.myfistapp.food_order_app.R;
+
+import java.text.DecimalFormat;
 
 public class GioHang extends AppCompatActivity {
 
@@ -77,7 +79,10 @@ public class GioHang extends AppCompatActivity {
             }
         });
     }
-
+    public static String currencyFormat(Double amount) {
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+        return formatter.format((amount));
+    }
     private void initList() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerViewList.setLayoutManager(linearLayoutManager);
@@ -138,7 +143,7 @@ public class GioHang extends AppCompatActivity {
     private void calculateCard() {
 
         tongsanpham.setText("Tổng "+managementCart.getTotalItems()+" sản phẩm" );
-        tongtien.setText(managementCart.getTotalFee()+"đ");
+        tongtien.setText(currencyFormat(managementCart.getTotalFee())+ " VNĐ" );
     }
 
     private void initView() {
