@@ -48,7 +48,7 @@ public class GioHang extends AppCompatActivity {
         pttt.setText(Pttt);
 
         Intent intent2 = getIntent();
-        String lhe = intent.getStringExtra("LienHe");
+        String lhe = intent2.getStringExtra("LienHe");
         diachi.setText(lhe);
 
         initList();

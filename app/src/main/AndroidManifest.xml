@@ -31,6 +31,9 @@
             android:name=".Activity.DangKy"
             android:exported="true" />
         <activity
+            android:name=".Activity.DiaChi"
+            android:exported="true" />
+        <activity
             android:name=".Activity.TrangChu"
             android:exported="true">
             <intent-filter>
