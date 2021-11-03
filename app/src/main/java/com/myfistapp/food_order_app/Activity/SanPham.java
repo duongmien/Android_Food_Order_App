@@ -14,6 +14,8 @@ import com.myfistapp.food_order_app.Class.SanPhamDomain;
 import com.myfistapp.food_order_app.Helper.ManagementCart;
 import com.myfistapp.food_order_app.R;
 
+import java.text.DecimalFormat;
+
 public class SanPham extends AppCompatActivity {
 
     private TextView btn_themsanpham;
@@ -33,7 +35,10 @@ public class SanPham extends AppCompatActivity {
         initView();
         getBundle();
     }
-
+    public static String currencyFormat(String amount) {
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+        return formatter.format(Double.parseDouble(amount));
+    }
     private void getBundle() {
         object = (SanPhamDomain) getIntent().getSerializableExtra("object");
 
@@ -44,7 +49,7 @@ public class SanPham extends AppCompatActivity {
                 .into(img_sanpham);
 
         txt_tensanpham.setText(object.getTensanpham());
-        txt_giasanpham.setText(object.getGiasanpham()+"đ");
+        txt_giasanpham.setText(currencyFormat(object.getGiasanpham())+" VNĐ");
         txt_danhgia.setText(object.getDanhgiasanpham());
         txt_thoigian.setText(object.getThoigian()+"phút");
         txt_kcal.setText(object.getKcal()+"kacl");
