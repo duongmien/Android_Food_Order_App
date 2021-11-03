@@ -16,6 +16,7 @@ import com.myfistapp.food_order_app.Interface.ChangeNumberItemsListener;
 import com.myfistapp.food_order_app.Helper.ManagementCart;
 import com.myfistapp.food_order_app.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.ViewHolder> {
@@ -29,7 +30,10 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.ViewHold
         managementCart = new ManagementCart(context);
         this.changeNumberItemsListener = changeNumberItemsListener;
     }
-
+    public static String currencyFormat(String amount) {
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+        return formatter.format(Double.parseDouble(amount));
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,7 +45,7 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(foodDomains.get(position).getTensanpham());
-        holder.feeEachItem.setText(String.valueOf(foodDomains.get(position).getGiasanpham()));
+        holder.feeEachItem.setText(String.valueOf( currencyFormat(foodDomains.get(position).getGiasanpham()) + " VNĐ" ));
        // holder.totalEachItem.setText(String.valueOf(Math.round((foodDomains.get(position).getSoluongdathang() * Integer.parseInt(foodDomains.get(position).getGiasanpham()) * 100.0) / 100.0)));
         holder.num.setText(String.valueOf(foodDomains.get(position).getSoluongdathang()));
 
