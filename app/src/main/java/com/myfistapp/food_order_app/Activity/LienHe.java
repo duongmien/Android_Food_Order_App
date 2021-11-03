@@ -11,19 +11,32 @@ import com.myfistapp.food_order_app.R;
 
 public class LienHe extends AppCompatActivity {
 
-    TextView btn_diachi,btn_hoanthanh;
+    TextView btn_diachi,btn_hoanthanh,ten,sdt,sonha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lien_he);
 
+        Intent intent = getIntent();
+        String diachi = intent.getStringExtra("DiaChi");
+        btn_diachi.setText(diachi);
         initView();
 
         btn_hoanthanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LienHe.this, GioHang.class));
+
+                Intent intent = new Intent(LienHe.this, GioHang.class);
+                String lienhe = ten.getText()+"\n"+sdt.getText()+"\n"+sonha.getText()+" "+btn_diachi.getText();
+                intent.putExtra("LienHe", lienhe);
+                startActivity(intent);
+            }
+        });
+        btn_diachi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LienHe.this, DiaChi.class));
             }
         });
 
@@ -32,6 +45,9 @@ public class LienHe extends AppCompatActivity {
     private void initView() {
         btn_diachi = findViewById(R.id.txt_diachi);
         btn_hoanthanh = findViewById(R.id.btn_hoanthanh);
+        ten = findViewById(R.id.txt_ten);
+        sdt = findViewById(R.id.txt_sdt);
+        sonha = findViewById(R.id.txt_sonha);
     }
     
 }

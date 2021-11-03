@@ -27,7 +27,7 @@ public class GioHang extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
     private ManagementCart managementCart;
-    private TextView tongtien, tongsanpham,emptyTxt,btndathang,pttt;
+    private TextView tongtien, tongsanpham,emptyTxt,btndathang,pttt, diachi;
     private RelativeLayout rediachi,redanhsach,rethanhtoan;
     private BottomNavigationView bottomNavigationView;
     private ImageView btnpttt,btndiachi;
@@ -44,6 +44,10 @@ public class GioHang extends AppCompatActivity {
         Intent intent = getIntent();
         String Pttt = intent.getStringExtra("PTTT");
         pttt.setText(Pttt);
+
+        Intent intent2 = getIntent();
+        String lhe = intent.getStringExtra("LienHe");
+        diachi.setText(lhe);
 
         initList();
         calculateCard();
@@ -149,5 +153,6 @@ public class GioHang extends AppCompatActivity {
         pttt= findViewById(R.id.txt_pttt);
         btnpttt= findViewById(R.id.img_arrow);
         btndiachi= findViewById(R.id.btn_diachi);
+        diachi= findViewById(R.id.txt_diachi);
     }
 }
