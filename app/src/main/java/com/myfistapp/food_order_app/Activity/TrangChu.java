@@ -12,9 +12,11 @@ import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.myfistapp.food_order_app.Class.SanPhamDomain;
 import com.myfistapp.food_order_app.Adapter.PhotoViewPagerAdapter;
@@ -58,8 +60,8 @@ public class TrangChu extends AppCompatActivity {
         setContentView(R.layout.activity_trang_chu);
 
         //Ánh xạ bottomNavigation
-        bottomNavigationView = findViewById(R.id.navmenu);
 
+        bottomNavigation();
         //Ánh xạ imageslide
         mViewPager =findViewById(R.id.viewpage);
         mCircleIndicator=findViewById(R.id.circle_indicator);
@@ -93,36 +95,56 @@ public class TrangChu extends AppCompatActivity {
         });
 
          recyclerViewPopular();
-        //Code
-        bottomNavigationView.setSelectedItemId(R.id.nav_home);
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+
+
+    }
+
+
+    private void bottomNavigation() {
+        FloatingActionButton floatingActionButton = findViewById(R.id.card_btn);
+        LinearLayout homeBtn = findViewById(R.id.homeBtn);
+        LinearLayout favBtn = findViewById(R.id.favBtn);
+        LinearLayout notiBtn = findViewById(R.id.notBtn);
+        LinearLayout proBtn = findViewById(R.id.proBtn);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public void onClick(View v) {
+                startActivity(new Intent(TrangChu.this, GioHang.class));
+            }
+        });
 
-                switch (item.getItemId()){
-                    case R.id.nav_home:
-                        Toast.makeText(TrangChu.this, "Home Page", Toast.LENGTH_SHORT).show();
-                        break;
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TrangChu.this, TrangChu.class));
+            }
+        });
 
-                    case R.id.nav_favorite:
-                        Toast.makeText(TrangChu.this, "Favorite Page", Toast.LENGTH_SHORT).show();
-                        break;
+        favBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TrangChu.this, YeuThich.class));
+            }
+        });
 
-                    case R.id.nav_cart:
-                        startActivity(new Intent(TrangChu.this, GioHang.class));
-                        break;
+        notiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TrangChu.this, ThongBao.class));
+            }
+        });
 
-                    case R.id.nav_profile:
-                        Toast.makeText(TrangChu.this, "Profile Page", Toast.LENGTH_SHORT).show();
-                        break;
-
-                }
-
-                return true;
+        proBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TrangChu.this, ThongTinCaNhan.class));
             }
         });
 
     }
+
+
 
     //Thêm ảnh Slider
     private List<Photo> getmListPhoto(){

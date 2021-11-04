@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.myfistapp.food_order_app.Adapter.GioHangAdapter;
 import com.myfistapp.food_order_app.Helper.ManagementCart;
@@ -31,7 +33,6 @@ public class GioHang extends AppCompatActivity {
     private ManagementCart managementCart;
     private TextView tongtien, tongsanpham,emptyTxt,btndathang,pttt, diachi;
     private RelativeLayout rediachi,redanhsach,rethanhtoan;
-    private BottomNavigationView bottomNavigationView;
     private ImageView btnpttt,btndiachi;
 
     @Override
@@ -112,39 +113,51 @@ public class GioHang extends AppCompatActivity {
         }
     }
 
+
     private void bottomNavigation() {
-        bottomNavigationView = findViewById(R.id.navmenu);
-        bottomNavigationView.setSelectedItemId(R.id.nav_cart);
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        FloatingActionButton floatingActionButton = findViewById(R.id.card_btn);
+        LinearLayout homeBtn = findViewById(R.id.homeBtn);
+        LinearLayout favBtn = findViewById(R.id.favBtn);
+        LinearLayout notiBtn = findViewById(R.id.notBtn);
+        LinearLayout proBtn = findViewById(R.id.proBtn);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public void onClick(View v) {
+                startActivity(new Intent(GioHang.this, GioHang.class));
+            }
+        });
 
-                switch (item.getItemId()){
-                    case R.id.nav_home:
-                        startActivity(new Intent(GioHang.this, TrangChu.class));
-                        break;
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GioHang.this, TrangChu.class));
+            }
+        });
 
-                    case R.id.nav_favorite:
-                        Toast.makeText(GioHang.this, "Favorite Page", Toast.LENGTH_SHORT).show();
-                        break;
+        favBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GioHang.this, YeuThich.class));
+            }
+        });
 
-                    case R.id.nav_cart:
-                        Toast.makeText(GioHang.this, "Cart Page", Toast.LENGTH_SHORT).show();
-                        break;
+        notiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GioHang.this, ThongBao.class));
+            }
+        });
 
-                    case R.id.nav_profile:
-                        Toast.makeText(GioHang.this, "Profile Page", Toast.LENGTH_SHORT).show();
-                        break;
-
-                }
-
-                return true;
+        proBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GioHang.this, ThongTinCaNhan.class));
             }
         });
     }
 
     private void calculateCard() {
-
         tongsanpham.setText("Tổng "+managementCart.getTotalItems()+" sản phẩm" );
         tongtien.setText(currencyFormat(managementCart.getTotalFee())+ " VNĐ" );
     }

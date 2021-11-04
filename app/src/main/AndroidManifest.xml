@@ -13,9 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Food_Order_App">
         <activity
-            android:name=".Activity.TrangChu"
-            android:exported="true" />
-        <activity
             android:name=".Activity.Splash"
             android:exported="true" />
         <activity
@@ -37,7 +34,7 @@
             android:name=".Activity.DiaChi"
             android:exported="true" />
         <activity
-            android:name=".Activity.Introduction"
+            android:name=".Activity.TrangChu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
