@@ -18,13 +18,15 @@ public class LienHe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lien_he);
 
+        initView();
+
         Intent intent = getIntent();
         String diachi = intent.getStringExtra("DiaChi");
         if(diachi != null)
         {
             btn_diachi.setText(diachi);
         }
-        initView();
+
 
         btn_hoanthanh.setOnClickListener(new View.OnClickListener() {
             @Override

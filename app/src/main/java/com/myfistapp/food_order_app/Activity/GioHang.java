@@ -43,13 +43,16 @@ public class GioHang extends AppCompatActivity {
 
         initView();
 
+
         Intent intent = getIntent();
         String Pttt = intent.getStringExtra("PTTT");
-        pttt.setText(Pttt);
+        if (Pttt!=""){
+        pttt.setText(Pttt);}
 
         Intent intent2 = getIntent();
         String lhe = intent2.getStringExtra("LienHe");
-        diachi.setText(lhe);
+        if(lhe!=""){
+        diachi.setText(lhe);}
 
         initList();
         calculateCard();

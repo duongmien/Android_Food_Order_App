@@ -1,12 +1,14 @@
 package com.myfistapp.food_order_app.Activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.myfistapp.food_order_app.Adapter.DiaChiAdapter;
 import com.myfistapp.food_order_app.Class.DiaChiChiTiet;
@@ -20,6 +22,7 @@ public class DiaChi extends AppCompatActivity {
     private Spinner spnQuanHuyen, spnPhuongXa;
     private DiaChiAdapter quanhuyenAdapter, phuongxaAdapter;
     private TextView btn_xacnhan;
+    private String qh,px;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,20 +36,46 @@ public class DiaChi extends AppCompatActivity {
 
         quanhuyenAdapter = new DiaChiAdapter(this,R.layout.holder_selected_diachi,getListQuanhuyen());
         phuongxaAdapter = new DiaChiAdapter(this,R.layout.holder_selected_diachi,getListPhuongxa());
-
         spnQuanHuyen.setAdapter(quanhuyenAdapter);
         spnPhuongXa.setAdapter(phuongxaAdapter);
+
+        spnQuanHuyen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                qh = quanhuyenAdapter.getItem(i).getName();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        spnPhuongXa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                px = phuongxaAdapter.getItem(i).getName();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         btn_xacnhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(DiaChi.this, spnPhuongXa.getSelectedItem()+" "+spnQuanHuyen.getSelectedItem()+" Đà Nẵng",Toast.LENGTH_SHORT).show();
-
-                    String diachi = spnPhuongXa.getSelectedItem().toString()+" "+spnQuanHuyen.getSelectedItem().toString()+" Đà Nẵng";
+                if(qh==""){
+                    Toast.makeText(DiaChi.this, "Vui long nhập Quận/Huyện", Toast.LENGTH_SHORT).show();
+                }else if(px==""){
+                    Toast.makeText(DiaChi.this, "Vui long nhập Phường/Xã", Toast.LENGTH_SHORT).show();
+                }else{
+                    String diachi = qh+", "+px+", Thành phố Đà Nẵng";
                     Intent intent = new Intent(DiaChi.this, LienHe.class);
                     intent.putExtra("DiaChi", diachi);
                     startActivity(intent);
-
+                }
             }
         });
 

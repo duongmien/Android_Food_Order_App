@@ -16,8 +16,8 @@ import com.myfistapp.food_order_app.R;
 import java.util.List;
 
 
-public class DiaChiAdapter extends ArrayAdapter {
-    public DiaChiAdapter(@NonNull Context context, int resource, @NonNull List objects) {
+public class DiaChiAdapter extends ArrayAdapter<DiaChiChiTiet> {
+    public DiaChiAdapter(@NonNull Context context, int resource, @NonNull List<DiaChiChiTiet> objects) {
         super(context, resource, objects);
     }
 
