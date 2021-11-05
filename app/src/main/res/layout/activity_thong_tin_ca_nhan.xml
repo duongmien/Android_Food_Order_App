@@ -237,6 +237,7 @@
                     android:textStyle="bold"
                     />
                 <TextView
+                    android:id="@+id/textdc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="104 Hồ Nghinh - An Hải Bắc - Sơn Trà - Đà Nẵng"
@@ -244,6 +245,19 @@
                     android:fontFamily="@font/opensans" />
             </LinearLayout>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_dangxuat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:textSize="20sp"
+            android:text="Đăng xuất"
+            android:fontFamily="@font/opensans"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 

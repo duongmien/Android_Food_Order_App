@@ -1,6 +1,7 @@
 package com.myfistapp.food_order_app.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
@@ -9,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -45,6 +47,15 @@ public class Introduction extends AppCompatActivity {
         backbtn=findViewById(R.id.backbtn);
         nextbtn=findViewById(R.id.nextbtn);
         skipbtn=findViewById(R.id.skipbtn);
+        //        Ghi nhớ đăng nhập
+        SharedPreferences preferences= getSharedPreferences("checkbox",MODE_PRIVATE);
+        String state_checkbox= preferences.getString("remember","");
+        if(state_checkbox.equals("true")){
+            Intent intent= new Intent(Introduction.this,TrangChu.class);
+            startActivity(intent);
+        }else if (state_checkbox.equals("false")){
+            Toast.makeText(this,"Please Sign in",Toast.LENGTH_SHORT).show();
+        }
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

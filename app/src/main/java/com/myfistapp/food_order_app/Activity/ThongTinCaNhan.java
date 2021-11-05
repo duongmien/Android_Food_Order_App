@@ -3,6 +3,7 @@ package com.myfistapp.food_order_app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +14,19 @@ import com.myfistapp.food_order_app.R;
 
 public class ThongTinCaNhan extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
+    Button bt_dangxuat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thong_tin_ca_nhan);
         bottomNavigation();
+        bt_dangxuat =findViewById(R.id.bt_dangxuat);
+        bt_dangxuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ThongTinCaNhan.this, DangNhap.class));
+            }
+        });
         }
 
     private void bottomNavigation() {

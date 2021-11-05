@@ -41,6 +41,7 @@ public class Splash extends AppCompatActivity {
         home_bg.setAnimation(topAnim);
         login.setAnimation(bottomAnim);
         signup.setAnimation(bottomAnim);
+//        Ghi nhớ đăng nhập
         SharedPreferences preferences= getSharedPreferences("checkbox",MODE_PRIVATE);
         String state_checkbox= preferences.getString("remember","");
         if(state_checkbox.equals("true")){
@@ -49,6 +50,7 @@ public class Splash extends AppCompatActivity {
         }else if (state_checkbox.equals("false")){
             Toast.makeText(this,"Please Sign in",Toast.LENGTH_SHORT).show();
         }
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
