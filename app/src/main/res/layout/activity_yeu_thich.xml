@@ -152,4 +152,52 @@
             app:tint="#ffffff" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    <RelativeLayout
+        android:id="@+id/re_header_yt"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/orange">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/opensans"
+            android:text="YÊU THÍCH"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav"
+        android:layout_below="@id/re_header_yt"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleview_danhsach_yt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
 </RelativeLayout>

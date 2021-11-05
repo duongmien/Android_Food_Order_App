@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF4D9"
     tools:context=".Activity.ThongTinCaNhan">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/bt_dangxuat"
         android:background="#FFF4D9"
         android:orientation="vertical">
 
@@ -71,17 +73,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans"
                     android:text="60"
                     android:textColor="#ffffff"
-                    android:fontFamily="@font/opensans"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans"
                     android:text="Đơn thành công"
-                    android:fontFamily="@font/opensans"
                     android:textColor="#ffffff"
                     android:textSize="18sp"
                     android:textStyle="normal" />
@@ -103,8 +105,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans"
                     android:text="4"
-                    android:fontFamily="@font/opensans"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -112,8 +114,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Checkin"
                     android:fontFamily="@font/opensans"
+                    android:text="Checkin"
                     android:textColor="#ffffff"
                     android:textSize="18sp"
                     android:textStyle="normal" />
@@ -135,8 +137,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="120"
                     android:fontFamily="@font/opensans"
+                    android:text="120"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -144,138 +146,154 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Món đã yêu thích"
                     android:fontFamily="@font/opensans"
+                    android:text="Món đã yêu thích"
                     android:textColor="#ffffff"
                     android:textSize="18sp"
                     android:textStyle="normal" />
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="120px"
-            android:paddingTop="50px"
             android:layout_height="wrap_content">
+
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tên người dùng"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/opensans"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="nhathuy215"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/opensans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                    />
-                <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Số điện thoại"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/opensans"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0705175740"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/opensans"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
 
-                    />
-                <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/opensans"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="nhathuy215@gmail.com"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/opensans"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/opensans"
+                        android:text="Tên người dùng"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    />
-                <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ngày sinh"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/opensans"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="21/05/2001"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/opensans" />
-                <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Địa chỉ"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/opensans"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:id="@+id/textdc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="104 Hồ Nghinh - An Hải Bắc - Sơn Trà - Đà Nẵng"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/opensans" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans"
+                        android:text="nhathuy215"
+                        android:textSize="18sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/opensans"
+                        android:text="Số điện thoại"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans"
+                        android:text="0705175740"
+                        android:textSize="18sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/opensans"
+                        android:text="Email"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans"
+                        android:text="nhathuy215@gmail.com"
+                        android:textSize="18sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/opensans"
+                        android:text="Ngày sinh"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans"
+                        android:text="21/05/2001"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/opensans"
+                        android:text="Địa chỉ"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textdc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans"
+                        android:text="104 Hồ Nghinh - An Hải Bắc - Sơn Trà - Đà Nẵng"
+                        android:textSize="18sp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/bt_dangxuat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_button"
-            android:textSize="20sp"
-            android:text="Đăng xuất"
-            android:fontFamily="@font/opensans"
-            android:textColor="@color/white"
-            android:padding="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"/>
+        </ScrollView>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_dangxuat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_nav"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_button"
+        android:fontFamily="@font/opensans"
+        android:padding="10dp"
+        android:text="Đăng xuất"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true">
+
         <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:backgroundTint="#ffffff"
             app:elevation="100px"
-            android:id="@+id/app_bar"
             app:fabCradleMargin="8dp"
             app:fabCradleRoundedCornerRadius="50dp"
             app:fabCradleVerticalOffset="6dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -382,7 +400,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_nav_profile"
-                        app:tint="@color/orange"/>
+                        app:tint="@color/orange" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -395,6 +413,7 @@
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/card_btn"
             android:layout_width="wrap_content"
