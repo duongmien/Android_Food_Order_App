@@ -2,6 +2,7 @@ package com.myfistapp.food_order_app.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Html;
 import android.view.View;
 import android.view.WindowManager;
@@ -20,7 +21,17 @@ public class Introduction extends AppCompatActivity {
     LinearLayout mDotLayout;
     Button backbtn, nextbtn, skipbtn;
     TextView[] dots;
-    ViewPageAdapter viewPageAdapter;
+
+    ViewPageAdapter viewPageAdapter= new ViewPageAdapter(this);
+
+    private Handler handler = new Handler();
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+                 mSliderViewPager.setCurrentItem(mSliderViewPager.getCurrentItem() + 1, true);
+
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,10 +79,11 @@ public class Introduction extends AppCompatActivity {
 
         mSliderViewPager=(ViewPager) findViewById(R.id.slideViewPager);
         mDotLayout=(LinearLayout) findViewById(R.id.indicator_layout);
-        viewPageAdapter = new ViewPageAdapter(this);
+
         mSliderViewPager.setAdapter(viewPageAdapter);
         setUpindicator(0);
         mSliderViewPager.addOnPageChangeListener(viewlistener);
+        handler.postDelayed(runnable,3000);
 
     }
     public void setUpindicator(int position){
@@ -101,6 +113,8 @@ public class Introduction extends AppCompatActivity {
             else {
                 backbtn.setVisibility(View.INVISIBLE);
             }
+            handler.removeCallbacks(runnable);
+            handler.postDelayed(runnable,3000);
         }
 
         @Override

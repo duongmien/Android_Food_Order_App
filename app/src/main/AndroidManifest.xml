@@ -16,6 +16,12 @@
             android:name=".Activity.TrangChu"
             android:exported="true" />
         <activity
+            android:name=".Activity.YeuThich"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.ThongBao"
+            android:exported="true" />
+        <activity
             android:name=".Activity.Splash"
             android:exported="true" />
         <activity
