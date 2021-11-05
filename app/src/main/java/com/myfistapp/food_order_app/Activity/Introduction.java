@@ -44,8 +44,7 @@ public class Introduction extends AppCompatActivity {
 //        textView=findViewById(R.id.textView);
 ////        lottieAnimationView.animate().setDuration(1000).setStartDelay(4000);
 //        textView.animate().setDuration(1000).setStartDelay(4000);
-        backbtn=findViewById(R.id.backbtn);
-        nextbtn=findViewById(R.id.nextbtn);
+
         skipbtn=findViewById(R.id.skipbtn);
         //        Ghi nhớ đăng nhập
         SharedPreferences preferences= getSharedPreferences("checkbox",MODE_PRIVATE);
@@ -56,28 +55,6 @@ public class Introduction extends AppCompatActivity {
         }else if (state_checkbox.equals("false")){
             Toast.makeText(this,"Please Sign in",Toast.LENGTH_SHORT).show();
         }
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(getItem(0)>0){
-                    mSliderViewPager.setCurrentItem(getItem(-1),true);
-                }
-            }
-        });
-
-        nextbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(getItem(0)<3){
-                    mSliderViewPager.setCurrentItem(getItem(1),true);
-                }
-                else {
-                    Intent i = new Intent (Introduction.this, Splash.class);
-                    startActivity(i);
-                    finish();
-                }
-            }
-        });
 
         skipbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +70,7 @@ public class Introduction extends AppCompatActivity {
 
         mSliderViewPager.setAdapter(viewPageAdapter);
         setUpindicator(0);
+//        Tự động di chuyển slide
         mSliderViewPager.addOnPageChangeListener(viewlistener);
         handler.postDelayed(runnable,3000);
 
@@ -118,12 +96,6 @@ public class Introduction extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             setUpindicator(position);
-            if(position>0){
-                backbtn.setVisibility(View.VISIBLE);
-            }
-            else {
-                backbtn.setVisibility(View.INVISIBLE);
-            }
             handler.removeCallbacks(runnable);
             handler.postDelayed(runnable,3000);
         }
