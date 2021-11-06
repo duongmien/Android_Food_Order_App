@@ -30,7 +30,14 @@ public class Introduction extends AppCompatActivity {
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-                 mSliderViewPager.setCurrentItem(mSliderViewPager.getCurrentItem() + 1, true);
+            if(mSliderViewPager.getCurrentItem()==3){
+                Intent i = new Intent(Introduction.this, Splash.class);
+                startActivity(i);
+                finish();
+            }else {
+                mSliderViewPager.setCurrentItem(mSliderViewPager.getCurrentItem() + 1, true);
+            }
+
 
         }
     };
